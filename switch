@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eou pipefail
+nix --extra-experimental-features 'nix-command flakes' build .#darwinConfigurations.cikora.system
+./result/sw/bin/darwin-rebuild switch --flake .
