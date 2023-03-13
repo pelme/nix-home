@@ -2,7 +2,6 @@ function prompt_long_pwd --description 'Print the current working directory'
     echo $PWD | sed -e "s|^$HOME|~|"
 end
 
-
 set -g __fish_git_prompt_color_branch green --bold
 
 function fish_prompt --description 'Write out the prompt, Andreas style'

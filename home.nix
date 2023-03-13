@@ -7,6 +7,30 @@
   programs.htop.enable = true;
   programs.git = {
       enable = true;
+      userName = "Andreas Pelme";
+      userEmail = "andreas@pelme.se";
+      aliases = {
+          recent = "!git branch --sort=-committerdate | head -n10";
+          done = "!branch=$(git rev-parse --abbrev-ref HEAD); git switch main && git branch -D $branch";
+      };
+
+      extraConfig = {
+          commit.template = "${./git_commit_template.txt}";
+
+          push.autosetupremote = true;
+          push.default = "current";
+
+          pull.rebase = true;
+
+          # delta
+          core.pager = "${pkgs.delta}/bin/delta";
+          interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";
+          delta.navigate = true;
+          delta.light = false;
+          merge.conflictstyle = "diff3";
+          diff.colorMoved = "default";
+      };
+
   };
 
   programs.fish = {
