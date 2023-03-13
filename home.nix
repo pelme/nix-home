@@ -45,6 +45,7 @@
       '';
       interactiveShellInit = (builtins.readFile ./fish/prompt.fish ) + (builtins.readFile ./fish/abbr.fish);
   };
+
   programs.neovim = {
       enable = true;
       viAlias = true;
@@ -62,6 +63,9 @@
       extraConfig = builtins.readFile ./vimrc.vim;
   };
 
+  home.shellAliases = {
+      code = "/usr/local/bin/code";
+  };
   home.packages = with pkgs; [
       awscli2
       coreutils
