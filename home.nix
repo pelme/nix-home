@@ -10,7 +10,6 @@
       userName = "Andreas Pelme";
       userEmail = "andreas@pelme.se";
       aliases = {
-          recent = "!git branch --sort=-committerdate | head -n10";
           done = "!branch=$(git rev-parse --abbrev-ref HEAD); git switch main && git branch -D $branch";
       };
 
@@ -24,6 +23,7 @@
 
           diff.noprefix = true;
           init.defaultBranch = "main";
+          branch.sort = "-committerdate";
 
           # delta
           core.pager = "${pkgs.delta}/bin/delta";
