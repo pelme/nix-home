@@ -23,6 +23,7 @@
           pull.rebase = true;
 
           diff.noprefix = true;
+          init.defaultBranch = "main";
 
           # delta
           core.pager = "${pkgs.delta}/bin/delta";
