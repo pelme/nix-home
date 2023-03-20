@@ -22,6 +22,8 @@
 
           pull.rebase = true;
 
+          diff.noprefix = true;
+
           # delta
           core.pager = "${pkgs.delta}/bin/delta";
           interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";
