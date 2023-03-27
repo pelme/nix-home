@@ -70,12 +70,13 @@
       code = "/usr/local/bin/code";
   };
   home.packages = with pkgs; [
+      aws-vault
       awscli2
       coreutils
       curl
       jq
-      ripgrep
       python311
+      ripgrep
       rsync
       s3cmd
       socat
