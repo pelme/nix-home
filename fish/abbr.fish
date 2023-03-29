@@ -26,6 +26,7 @@ abbr --add dj django-admin
 abbr --add djr django-admin runserver
 abbr --add djc django-admin celery
 abbr --add djs django-admin shell_plus --quiet-load
+abbr --add djm django-admin migrate
 
 abbr --add cd.. cd ..
 abbr --add cd... cd ../..
