@@ -19,7 +19,7 @@ abbr --add gre git restore
 
 abbr --add grs git reset
 abbr --add grsh git reset HEAD^
-abbr --add wip git add --all \; git commit -m WIP
+abbr --add wip git add --all \; git commit -m WIP -n
 
 abbr --add ax aws-vault exec pk --
 abbr --add dj django-admin
