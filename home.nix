@@ -46,7 +46,7 @@
 
           set -g fish_greeting
       '';
-      interactiveShellInit = (builtins.readFile ./fish/prompt.fish ) + (builtins.readFile ./fish/abbr.fish);
+      interactiveShellInit = (builtins.readFile ./fish/prompt.fish ) + (builtins.readFile ./fish/abbr.fish) + (builtins.readFile ./fish/homebrew.fish);
   };
 
   programs.neovim = {
