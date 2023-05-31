@@ -72,6 +72,7 @@
   home.packages = with pkgs; [
       aws-vault
       awscli2
+      comma
       coreutils
       curl
       jq
