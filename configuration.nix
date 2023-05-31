@@ -17,7 +17,6 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   homebrew.enable = true;
-  homebrew.brewPrefix = "/usr/local/bin";
   homebrew.casks = [
       "1password"
       "arq"

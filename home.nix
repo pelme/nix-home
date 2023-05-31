@@ -67,7 +67,6 @@
   };
 
   home.shellAliases = {
-      code = "/usr/local/bin/code";
       pbclean = "pbpaste | pbcopy";
   };
   home.packages = with pkgs; [
