@@ -20,7 +20,6 @@
   homebrew.casks = [
       "1password"
       "arq"
-      "chromedriver"
       "discord"
       "firefox"
       "google-chrome"
