@@ -32,3 +32,6 @@ abbr --add cd.. cd ..
 abbr --add cd... cd ../..
 abbr --add cd.... cd ../../..
 
+abbr --add k kubectl
+abbr --add kp kubectl -n production
+abbr --add kr kubectl -n review
