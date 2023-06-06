@@ -25,6 +25,8 @@
           init.defaultBranch = "main";
           branch.sort = "-committerdate";
 
+          advice.skippedCherryPicks = false;
+
           # delta
           core.pager = "${pkgs.delta}/bin/delta";
           interactive.diffFilter = "${pkgs.delta}/bin/delta --color-only";
