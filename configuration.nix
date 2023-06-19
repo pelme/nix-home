@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   nix.settings.trusted-users = ["andreas"];
+  nix.settings.max-jobs = 30;
 
   nix.extraOptions = ''
     auto-optimise-store = true
