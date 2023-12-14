@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   home.stateVersion = "23.05";
@@ -47,8 +47,17 @@
           fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
 
           set -g fish_greeting
+          set __done_min_cmd_duration 2000
       '';
       interactiveShellInit = (builtins.readFile ./fish/prompt.fish ) + (builtins.readFile ./fish/abbr.fish) + (builtins.readFile ./fish/homebrew.fish);
+      plugins = with pkgs.fishPlugins; [
+        {name = "done"; src = done.src;}
+        {name = "grc"; src = grc.src;}
+    ];
+  };
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
   };
 
   programs.neovim = {
@@ -78,7 +87,8 @@
       coreutils
       curl
       jq
-      python311
+      #python311
+      python312
       ripgrep
       rsync
       s3cmd
@@ -86,6 +96,20 @@
       tmux
       wget
       yubikey-manager
+      nodejs
+      nodePackages.npm
+      cowsay
+      sops
+      grc
+      terminal-notifier  # used by fish done
+      terraform-ls
+      nodePackages.bash-language-server
+      nodePackages.typescript-language-server
+      python311Packages.python-lsp-server
+      python311Packages.python-lsp-ruff
+      python311Packages.pylsp-mypy
+      # python311Packages.ruff-lsp
+      xq
   ];
 
   home.file = {
