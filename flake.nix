@@ -12,7 +12,7 @@
 
   outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs:
   {
-    darwinConfigurations.cikora =  darwin.lib.darwinSystem {
+    darwinConfigurations.pelme =  darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./configuration.nix
