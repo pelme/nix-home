@@ -19,6 +19,9 @@
 
   security.pam.enableSudoTouchIdAuth = true;
   users.users.andreas.home = "/Users/andreas";
+  users.users.andreas.shell = "/etc/profiles/per-user/andreas/bin/fish";
+
+  environment.shells = [ "/etc/profiles/per-user/andreas/bin/fish" ];
 
   fonts = {
       fontDir.enable = true;
