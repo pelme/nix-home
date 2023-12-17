@@ -101,7 +101,6 @@
       cowsay
       sops
       grc
-      terminal-notifier  # used by fish done
       terraform-ls
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
