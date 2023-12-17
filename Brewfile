@@ -1,6 +1,5 @@
 cask "1password"
 cask "arq"
-cask "aws-vault"
 cask "chromedriver"
 cask "discord"
 cask "docker"
