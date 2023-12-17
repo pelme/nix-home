@@ -37,7 +37,6 @@
           AppleKeyboardUIMode = 3; # Use keyboard navigation to move focus between controls
       };
       CustomUserPreferences = {
-          "com.apple.mail".DisableInlineAttachmentViewing = true;
           "com.apple.TimeMachine".DoNotOfferNewDisksForBackup = true;
           "com.apple.desktopservices" = {
             # Avoid creating .DS_Store files on network or USB volumes
