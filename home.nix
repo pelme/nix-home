@@ -52,7 +52,7 @@
       interactiveShellInit = (builtins.readFile ./fish/prompt.fish ) + (builtins.readFile ./fish/abbr.fish) + (builtins.readFile ./fish/homebrew.fish);
       plugins = with pkgs.fishPlugins; [
         {name = "done"; src = done.src;}
-        {name = "grc"; src = grc.src;}
+        #{name = "grc"; src = grc.src;}
     ];
   };
   programs.helix = {
@@ -98,7 +98,6 @@
       yubikey-manager
       nodejs
       nodePackages.npm
-      cowsay
       sops
       grc
       terraform-ls
