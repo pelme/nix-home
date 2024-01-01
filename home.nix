@@ -58,6 +58,23 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    settings = {
+        theme = "molokai";
+        editor = {
+            bufferline = "multiple";
+            color-modes = true;
+            file-picker.hidden = false;
+            cursor-shape = {
+                insert = "bar";
+                normal = "block";
+                select = "underline";
+            };
+        };
+        keys.normal = {
+            "{" = ["goto_prev_paragraph"];
+            "}" = ["goto_next_paragraph"];
+        };
+    };
   };
 
   programs.neovim = {
