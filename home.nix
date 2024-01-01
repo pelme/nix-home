@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 
   programs.direnv.enable = true;
   programs.htop.enable = true;
@@ -75,6 +75,11 @@
             "}" = ["goto_next_paragraph"];
         };
     };
+    languages = {
+        language-server.pylsp.config.pylsp = {
+            plugins.black.enabled = true;
+        };
+    };
   };
 
   programs.neovim = {
@@ -98,13 +103,11 @@
       pbclean = "pbpaste | pbcopy";
   };
   home.packages = with pkgs; [
-      aws-vault
       awscli2
       comma
       coreutils
       curl
       jq
-      #python311
       python312
       ripgrep
       rsync
@@ -112,19 +115,17 @@
       socat
       tmux
       wget
-      yubikey-manager
       nodejs
       nodePackages.npm
-      sops
+      poetry
       grc
       terraform-ls
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
       python311Packages.python-lsp-server
       python311Packages.python-lsp-ruff
+      python311Packages.python-lsp-black
       python311Packages.pylsp-mypy
-      # python311Packages.ruff-lsp
-      xq
   ];
 
   home.file = {
