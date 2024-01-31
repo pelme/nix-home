@@ -104,6 +104,7 @@
   };
   home.packages = with pkgs; [
       awscli2
+      cachix
       comma
       coreutils
       curl
@@ -120,6 +121,7 @@
       poetry
       grc
       terraform-ls
+      openssh
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
       python311Packages.python-lsp-server
