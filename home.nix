@@ -14,6 +14,7 @@
       };
 
       extraConfig = {
+          rerere.enabled = true;
           commit.template = "${./git_commit_template.txt}";
 
           push.autosetupremote = true;
@@ -107,6 +108,7 @@
       cachix
       comma
       coreutils
+      bashInteractive
       curl
       jq
       python312
