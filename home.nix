@@ -124,6 +124,7 @@
       grc
       terraform-ls
       openssh
+      httpie
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
       python311Packages.python-lsp-server
