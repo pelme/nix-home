@@ -51,7 +51,6 @@
 
   users.users.andreas.home = "/Users/andreas";
 
-  environment.shells = [ "/etc/profiles/per-user/andreas/bin/fish" ];
 
   fonts = {
       fontDir.enable = true;
@@ -63,6 +62,8 @@
   system.activationScripts.postUserActivation.text = ''
     killall Dock
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    ANDREAS_FISH="/etc/profiles/per-user/andreas/bin/fish"
+    grep -q "$ANDREAS_FISH" /etc/shells || echo "$ANDREAS_FISH" | sudo tee -a /etc/shells
   '';
 
 }
