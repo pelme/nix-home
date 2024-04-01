@@ -112,7 +112,6 @@
     bashInteractive
     curl
     jq
-    python312
     ripgrep
     rsync
     s3cmd
@@ -126,6 +125,17 @@
     terraform-ls
     openssh
     httpie
+    tailscale
+    (pkgs.runCommand "all-the-pythons" {} ''
+        mkdir -p $out/bin
+        ln -s ${pkgs.python39}/bin/python $out/bin/python3.9
+        ln -s ${pkgs.python310}/bin/python $out/bin/python3.10
+        ln -s ${pkgs.python311}/bin/python $out/bin/python3.11
+        ln -s ${pkgs.python312}/bin/python $out/bin/python3.12
+        ln -s ${pkgs.python313}/bin/python $out/bin/python3.13
+        ln -s ${pkgs.python313}/bin/python $out/bin/python3
+        ln -s ${pkgs.python313}/bin/python $out/bin/python
+    '')
   ];
 
   home.file = {
