@@ -106,26 +106,26 @@
   home.packages = with pkgs; [
     alejandra
     awscli2
+    bashInteractive
     cachix
     comma
     coreutils
-    bashInteractive
     curl
+    grc
+    httpie
     jq
+    nodePackages.npm
+    nodejs
+    openssh
+    poetry
     ripgrep
     rsync
     s3cmd
     socat
+    tailscale
+    terraform-ls
     tmux
     wget
-    nodejs
-    nodePackages.npm
-    poetry
-    grc
-    terraform-ls
-    openssh
-    httpie
-    tailscale
     (pkgs.runCommand "all-the-pythons" {} ''
         mkdir -p $out/bin
         ln -s ${pkgs.python39}/bin/python $out/bin/python3.9
