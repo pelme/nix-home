@@ -111,6 +111,7 @@
     comma
     coreutils
     curl
+    gh
     grc
     httpie
     jq
