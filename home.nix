@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.stateVersion = "23.11";
 
   programs.direnv.enable = true;
@@ -53,7 +57,11 @@
       set -g fish_greeting
       set __done_min_cmd_duration 2000
     '';
-    interactiveShellInit = (builtins.readFile ./fish/prompt.fish) + (builtins.readFile ./fish/abbr.fish) + (builtins.readFile ./fish/homebrew.fish);
+    interactiveShellInit = lib.concatStringsSep "\n" (map builtins.readFile [
+      ./fish/prompt.fish
+      ./fish/abbr.fish
+      ./fish/homebrew.fish
+    ]);
     plugins = with pkgs.fishPlugins; [
       {
         name = "done";
