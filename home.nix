@@ -61,6 +61,10 @@
       ./fish/prompt.fish
       ./fish/abbr.fish
       ./fish/homebrew.fish
+      (pkgs.fetchurl {
+        url = "https://iterm2.com/shell_integration/fish";
+        hash = "sha256-tdn4z0tIc0nC5nApGwT7GYbiY91OTA4hNXZDDQ6g9qU=";
+      })
     ]);
     plugins = with pkgs.fishPlugins; [
       {
