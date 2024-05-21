@@ -3,6 +3,7 @@
     ./modules/nix.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
   services.nix-daemon.enable = true;
 
   system.keyboard.enableKeyMapping = true;
