@@ -116,6 +116,7 @@
     pbclean = "pbpaste | pbcopy";
   };
   home.packages = with pkgs; [
+    _1password
     alejandra
     awscli2
     bashInteractive
@@ -135,6 +136,7 @@
     rsync
     s3cmd
     socat
+    sops
     tailscale
     terraform-ls
     tmux
