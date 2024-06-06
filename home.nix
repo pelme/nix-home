@@ -128,6 +128,7 @@
     grc
     httpie
     jq
+    jujutsu
     nodePackages.npm
     nodejs
     openssh
