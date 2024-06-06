@@ -132,7 +132,6 @@
     nodePackages.npm
     nodejs
     openssh
-    poetry
     ripgrep
     rsync
     s3cmd
