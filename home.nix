@@ -23,6 +23,7 @@
       push.default = "current";
 
       pull.rebase = true;
+      rebase.updateRefs = true;
 
       diff.noprefix = true;
       init.defaultBranch = "main";
