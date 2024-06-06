@@ -139,7 +139,6 @@
     socat
     sops
     tailscale
-    terraform-ls
     tmux
     wget
     (pkgs.runCommand "all-the-pythons" {} ''
