@@ -51,6 +51,7 @@
 
       set -g fish_greeting
       set __done_min_cmd_duration 2000
+
     '';
     interactiveShellInit = lib.concatStringsSep "\n" (map builtins.readFile [
       ./fish/prompt.fish
@@ -134,7 +135,6 @@
     nodePackages.npm
     nodejs
     openssh
-    poetry
     ripgrep
     rsync
     s3cmd
