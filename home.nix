@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
   home.stateVersion = "23.11";
@@ -32,6 +33,17 @@
       advice.skippedCherryPicks = false;
 
       diff.colorMoved = "default";
+    };
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        email = "andreas@pelme.se";
+        name = "Andreas Pelme";
+      };
+      ui.diff.format = "git";
     };
   };
 
@@ -131,7 +143,6 @@
     grc
     httpie
     jq
-    jujutsu
     nodePackages.npm
     nodejs
     openssh
@@ -171,5 +182,7 @@
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
     PYTHONIOENCODING = "UTF-8";
+    # Workaround https://github.com/martinvonz/jj/pull/3466
+    JJ_CONFIG = "${config.xdg.configHome}/jj/config.toml";
   };
 }
