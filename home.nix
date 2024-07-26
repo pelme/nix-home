@@ -128,7 +128,7 @@
 
   home.shellAliases = {
     pbclean = "pbpaste | pbcopy";
-    t = "cd (mktemp -d)";
+    t = "cd (mktemp -p /tmp -d stuff.XXXXXXXXX)";
   };
   home.packages = with pkgs; [
     _1password
