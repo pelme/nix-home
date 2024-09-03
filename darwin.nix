@@ -45,12 +45,9 @@
 
   users.users.andreas.home = "/Users/andreas";
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = [
-      pkgs.fira-code
-    ];
-  };
+  fonts.packages = [
+    pkgs.fira-code
+  ];
 
   system.activationScripts.postUserActivation.text = ''
     killall Dock
