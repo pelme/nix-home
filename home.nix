@@ -85,7 +85,6 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "molokai";
       editor = {
         bufferline = "multiple";
         color-modes = true;
