@@ -4,6 +4,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  system.checks.verifyNixChannels = false;
   services.nix-daemon.enable = true;
 
   system.keyboard.enableKeyMapping = true;
