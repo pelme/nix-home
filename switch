@@ -3,4 +3,4 @@ set -eou pipefail
 echo building darwing configuration...
 nix --extra-experimental-features 'nix-command flakes' build .#darwinConfigurations.pelme.system
 echo switching config
-./result/sw/bin/darwin-rebuild switch --flake .#pelme
+sudo --set-home ./result/sw/bin/darwin-rebuild switch --flake .#pelme
