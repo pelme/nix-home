@@ -149,6 +149,7 @@
     ripgrep
     rsync
     s3cmd
+    shellcheck
     socat
     sops
     tailscale
