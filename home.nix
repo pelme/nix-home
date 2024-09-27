@@ -70,8 +70,9 @@
       ./fish/abbr.fish
       ./fish/homebrew.fish
       (pkgs.fetchurl {
-        url = "https://iterm2.com/shell_integration/fish";
-        hash = "sha256-tdn4z0tIc0nC5nApGwT7GYbiY91OTA4hNXZDDQ6g9qU=";
+        # same as https://iterm2.com/shell_integration/fish but a stable URL
+        url = "https://raw.githubusercontent.com/gnachman/iTerm2/6fc691289b95e874527775687eefc5dffd06c167/Resources/shell_integration/iterm2_shell_integration.fish";
+        hash = "sha256-aKTt7HRMlB7htADkeMavWuPJOQq1EHf27dEIjKgQgo0=";
       })
     ]);
     plugins = with pkgs.fishPlugins; [
