@@ -31,6 +31,7 @@
       branch.sort = "-committerdate";
 
       advice.skippedCherryPicks = false;
+      advice.detachedHead = false;
 
       diff.colorMoved = "default";
     };
