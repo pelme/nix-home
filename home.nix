@@ -132,7 +132,7 @@
     t = "cd (mktemp -p /tmp -d stuff.XXXXXXXXX)";
   };
   home.packages = with pkgs; [
-    _1password
+    _1password-cli
     alejandra
     awscli2
     bashInteractive
