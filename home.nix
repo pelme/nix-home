@@ -156,6 +156,7 @@
     sops
     tailscale
     tmux
+    tree
     wget
     (pkgs.runCommand "all-the-pythons" {} ''
       mkdir -p $out/bin
