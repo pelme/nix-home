@@ -45,6 +45,7 @@
         name = "Andreas Pelme";
       };
       ui.diff.format = "git";
+      ui.default-command = "log";
     };
   };
 
