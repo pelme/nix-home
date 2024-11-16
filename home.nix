@@ -184,7 +184,5 @@
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
     PYTHONIOENCODING = "UTF-8";
-    # Workaround https://github.com/martinvonz/jj/pull/3466
-    JJ_CONFIG = "${config.xdg.configHome}/jj/config.toml";
   };
 }
