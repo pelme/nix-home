@@ -47,7 +47,6 @@ nmap <leader>y "*y
 
 nmap <leader>t :CtrlP<cr>
 nmap <leader>b :CtrlPBuffer<cr>
-imap jj <C-c>
 
 nnoremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <leader><leader> :b#<cr>  " switch to last buffer
