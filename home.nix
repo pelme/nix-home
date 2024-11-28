@@ -71,6 +71,7 @@
       ./fish/prompt.fish
       ./fish/abbr.fish
       ./fish/homebrew.fish
+      ./fish/jujutsu.fish
       (pkgs.fetchurl {
         # same as https://iterm2.com/shell_integration/fish but a stable URL
         url = "https://raw.githubusercontent.com/gnachman/iTerm2/6fc691289b95e874527775687eefc5dffd06c167/Resources/shell_integration/iterm2_shell_integration.fish";
