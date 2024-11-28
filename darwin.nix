@@ -49,6 +49,7 @@
 
   fonts.packages = [
     pkgs.fira-code
+    pkgs.nerdfonts
   ];
 
   system.activationScripts.postUserActivation.text = ''
