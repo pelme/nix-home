@@ -72,6 +72,11 @@
       ./fish/abbr.fish
       ./fish/homebrew.fish
       ./fish/jujutsu.fish
+      # Dynamic jujutsu completions from https://gist.github.com/bnjmnt4n/9f47082b8b6e6ed2b2a805a1516090c8:
+      (pkgs.fetchurl {
+        url = "https://gist.githubusercontent.com/bnjmnt4n/9f47082b8b6e6ed2b2a805a1516090c8/raw/d93853a40ff8c566c1ce5fcea2a34c0095e689d7/jj.fish";
+        hash = "sha256-Ac6ssscmUF6EZx8lOWYDnx54x5/GMctndSLnTFJLLNc";
+      })
       (pkgs.fetchurl {
         # same as https://iterm2.com/shell_integration/fish but a stable URL
         url = "https://raw.githubusercontent.com/gnachman/iTerm2/6fc691289b95e874527775687eefc5dffd06c167/Resources/shell_integration/iterm2_shell_integration.fish";
