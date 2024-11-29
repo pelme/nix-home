@@ -94,6 +94,7 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
+      shlvl.disabled = false;
       package.disabled = true;
       git_branch.disabled = true;
       git_commit.disabled = true;
@@ -102,16 +103,14 @@
       git_status.disabled = true;
       python.disabled = true;
       nodejs.disabled = true;
-      nix_shell = {
-        format = "$symbol";
-      };
+      nix_shell.format = "$symbol";
 
       # https://github.com/martinvonz/jj/wiki/Starship
       # Can be simplified once proper jujutsu support is landed in starship:
       # https://github.com/starship/starship/issues/6076
       custom.jj = {
         when = "jj root";
-        symbol = "jj";
+        symbol = "jj ";
         command = ''
           jj log -r@ -n1 --ignore-working-copy --no-graph --color always  -T '
             separate(" ",
