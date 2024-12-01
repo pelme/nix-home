@@ -159,6 +159,7 @@ JJ: -------------------------------------------
   };
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     settings = {
       theme = "fleet_dark";
       editor = {
@@ -185,7 +186,6 @@ JJ: -------------------------------------------
 
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
@@ -230,6 +230,7 @@ JJ: -------------------------------------------
     tailscale
     tmux
     tree
+    nil
     wget
     (pkgs.runCommand "all-the-pythons" {} ''
       mkdir -p $out/bin
