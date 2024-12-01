@@ -46,6 +46,16 @@
       };
       ui.default-command = "log";
       ui.merge-editor = "vscode";
+
+    ui.default-description = ''
+JJ: If applied, this commit will...
+
+JJ: Explain why this change is being made
+
+JJ: Provide links to any relevant tickets, articles or other resources
+
+JJ: -------------------------------------------
+'';
    };
   };
 
