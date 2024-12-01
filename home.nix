@@ -160,6 +160,7 @@ JJ: -------------------------------------------
   programs.helix = {
     enable = true;
     settings = {
+      theme = "fleet_dark";
       editor = {
         bufferline = "multiple";
         color-modes = true;
