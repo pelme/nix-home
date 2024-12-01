@@ -46,7 +46,8 @@
       };
       ui.diff.format = "git";
       ui.default-command = "log";
-    };
+      ui.merge-editor = "vscode";
+   };
   };
 
   programs.sapling = {
