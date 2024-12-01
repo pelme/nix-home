@@ -44,7 +44,6 @@
         email = "andreas@pelme.se";
         name = "Andreas Pelme";
       };
-      ui.diff.format = "git";
       ui.default-command = "log";
       ui.merge-editor = "vscode";
    };
