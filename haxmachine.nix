@@ -3,15 +3,22 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   constants = import ./constants.nix;
-in {
+in
+{
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "ahci"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-partlabel/root";
@@ -24,7 +31,7 @@ in {
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/fac1ee8b-2871-41f5-93a3-9f7d40a45271";}
+    { device = "/dev/disk/by-uuid/fac1ee8b-2871-41f5-93a3-9f7d40a45271"; }
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
@@ -72,7 +79,10 @@ in {
   users.users.tilde = {
     isNormalUser = true;
     description = "tilde";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       firefox
       htop

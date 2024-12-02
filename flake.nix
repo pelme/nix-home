@@ -14,43 +14,46 @@
     };
   };
 
-  outputs = {
-    self,
-    darwin,
-    nixpkgs,
-    home-manager,
-    lix-module,
-    ...
-  } @ inputs: {
-    nixosConfigurations.haxmachine = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./haxmachine.nix
-        ./modules/nix.nix
+  outputs =
+    {
+      self,
+      darwin,
+      nixpkgs,
+      home-manager,
+      lix-module,
+      ...
+    }@inputs:
+    {
+      formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+      nixosConfigurations.haxmachine = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./haxmachine.nix
+          ./modules/nix.nix
 
-        lix-module.nixosModules.default
+          lix-module.nixosModules.default
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.tilde = import ./home.nix;
-        }
-      ];
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.tilde = import ./home.nix;
+          }
+        ];
+      };
+
+      darwinConfigurations.pelme = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./darwin.nix
+          lix-module.nixosModules.default
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.andreas = import ./home.nix;
+          }
+        ];
+      };
     };
-
-    darwinConfigurations.pelme = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [
-        ./darwin.nix
-        lix-module.nixosModules.default
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.andreas = import ./home.nix;
-        }
-      ];
-    };
-  };
 }

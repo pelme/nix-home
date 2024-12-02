@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   home.stateVersion = "23.11";
 
   programs.direnv.enable = true;
@@ -47,16 +48,16 @@
       ui.default-command = "log";
       ui.merge-editor = "vscode";
 
-    ui.default-description = ''
-JJ: If applied, this commit will...
+      ui.default-description = ''
+        JJ: If applied, this commit will...
 
-JJ: Explain why this change is being made
+        JJ: Explain why this change is being made
 
-JJ: Provide links to any relevant tickets, articles or other resources
+        JJ: Provide links to any relevant tickets, articles or other resources
 
-JJ: -------------------------------------------
-'';
-   };
+        JJ: -------------------------------------------
+      '';
+    };
   };
 
   programs.sapling = {
@@ -77,21 +78,23 @@ JJ: -------------------------------------------
       set __done_min_cmd_duration 2000
 
     '';
-    interactiveShellInit = lib.concatStringsSep "\n" (map builtins.readFile [
-      ./fish/abbr.fish
-      ./fish/homebrew.fish
-      ./fish/jujutsu.fish
-      # Dynamic jujutsu completions from https://gist.github.com/bnjmnt4n/9f47082b8b6e6ed2b2a805a1516090c8:
-      (pkgs.fetchurl {
-        url = "https://gist.githubusercontent.com/bnjmnt4n/9f47082b8b6e6ed2b2a805a1516090c8/raw/d93853a40ff8c566c1ce5fcea2a34c0095e689d7/jj.fish";
-        hash = "sha256-Ac6ssscmUF6EZx8lOWYDnx54x5/GMctndSLnTFJLLNc";
-      })
-      (pkgs.fetchurl {
-        # same as https://iterm2.com/shell_integration/fish but a stable URL
-        url = "https://raw.githubusercontent.com/gnachman/iTerm2/6fc691289b95e874527775687eefc5dffd06c167/Resources/shell_integration/iterm2_shell_integration.fish";
-        hash = "sha256-aKTt7HRMlB7htADkeMavWuPJOQq1EHf27dEIjKgQgo0=";
-      })
-    ]);
+    interactiveShellInit = lib.concatStringsSep "\n" (
+      map builtins.readFile [
+        ./fish/abbr.fish
+        ./fish/homebrew.fish
+        ./fish/jujutsu.fish
+        # Dynamic jujutsu completions from https://gist.github.com/bnjmnt4n/9f47082b8b6e6ed2b2a805a1516090c8:
+        (pkgs.fetchurl {
+          url = "https://gist.githubusercontent.com/bnjmnt4n/9f47082b8b6e6ed2b2a805a1516090c8/raw/d93853a40ff8c566c1ce5fcea2a34c0095e689d7/jj.fish";
+          hash = "sha256-Ac6ssscmUF6EZx8lOWYDnx54x5/GMctndSLnTFJLLNc";
+        })
+        (pkgs.fetchurl {
+          # same as https://iterm2.com/shell_integration/fish but a stable URL
+          url = "https://raw.githubusercontent.com/gnachman/iTerm2/6fc691289b95e874527775687eefc5dffd06c167/Resources/shell_integration/iterm2_shell_integration.fish";
+          hash = "sha256-aKTt7HRMlB7htADkeMavWuPJOQq1EHf27dEIjKgQgo0=";
+        })
+      ]
+    );
     plugins = with pkgs.fishPlugins; [
       {
         name = "done";
@@ -173,15 +176,23 @@ JJ: -------------------------------------------
         };
       };
       keys.normal = {
-        "{" = ["goto_prev_paragraph"];
-        "}" = ["goto_next_paragraph"];
+        "{" = [ "goto_prev_paragraph" ];
+        "}" = [ "goto_next_paragraph" ];
       };
     };
     languages = {
       language-server.pylsp.config.pylsp = {
         plugins.black.enabled = true;
       };
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+        }
+      ];
     };
+
   };
 
   programs.neovim = {
@@ -232,7 +243,7 @@ JJ: -------------------------------------------
     tree
     nil
     wget
-    (pkgs.runCommand "all-the-pythons" {} ''
+    (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
       ln -s ${pkgs.python312}/bin/python $out/bin/python3
       ln -s ${pkgs.python312}/bin/python $out/bin/python
