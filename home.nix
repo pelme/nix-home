@@ -238,6 +238,7 @@
     shellcheck
     socat
     sops
+    spacer
     tailscale
     tmux
     tree
