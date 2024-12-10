@@ -218,7 +218,6 @@
   };
   home.packages = with pkgs; [
     _1password-cli
-    alejandra
     awscli2
     bashInteractive
     cachix
@@ -243,6 +242,7 @@
     tmux
     tree
     nil
+    nixfmt-rfc-style
     wget
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
