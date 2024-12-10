@@ -50,7 +50,7 @@
 
   fonts.packages = [
     pkgs.fira-code
-    pkgs.nerdfonts
+    pkgs.nerd-fonts.fira-code
   ];
 
   system.activationScripts.postUserActivation.text = ''
