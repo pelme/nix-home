@@ -228,6 +228,7 @@
     gh
     grc
     httpie
+    hyperfine
     jq
     nodePackages.npm
     nodejs
