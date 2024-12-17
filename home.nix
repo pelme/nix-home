@@ -9,6 +9,7 @@
 
   programs.direnv.enable = true;
   programs.htop.enable = true;
+  programs.fzf.enable = true;
   programs.git = {
     enable = true;
     userName = "Andreas Pelme";
