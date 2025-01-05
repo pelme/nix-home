@@ -47,6 +47,12 @@
       };
       ui.default-command = "log";
       ui.merge-editor = "vscode";
+      ui.diff.tool = [
+        "difft"
+        "--color=always"
+        "$left"
+        "$right"
+      ];
 
       ui.default-description = ''
         JJ: If applied, this commit will...
@@ -224,6 +230,7 @@
     comma
     coreutils
     curl
+    difftastic
     gh
     grc
     httpie
