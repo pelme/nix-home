@@ -253,6 +253,7 @@
     nixfmt-rfc-style
     wget
     uv
+    unixtools.watch
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
       ln -s ${pkgs.python312}/bin/python $out/bin/python3
