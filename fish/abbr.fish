@@ -35,3 +35,6 @@ abbr --add cd.... cd ../../..
 abbr --add k kubectl
 abbr --add kp kubectl -n production
 abbr --add kr kubectl -n review
+
+abbr --add jjw hwatch -n 1 --color jj --ignore-working-copy log --color=always
+abbr --add jjr jj rebase
