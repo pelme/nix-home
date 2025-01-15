@@ -53,7 +53,7 @@
         "$left"
         "$right"
       ];
-
+      ui.conflict-marker-style = "git";
       ui.default-description = ''
         JJ: If applied, this commit will...
 
