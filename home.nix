@@ -233,6 +233,7 @@
     coreutils
     curl
     difftastic
+    findutils
     gh
     grc
     httpie
