@@ -121,15 +121,59 @@
         "}" = [ "goto_next_paragraph" ];
       };
     };
+
     languages = {
-      language-server.pylsp.config.pylsp = {
-        plugins.black.enabled = true;
+      language-server.pyright = {
+        command = "pyright-langserver";
+        args = [ "--stdio" ];
+        config.reportMissingtypeStubs = false;
       };
+
+      language-server.ruff = {
+        command = "ruff";
+        args = [ "server" ];
+      };
+
+      language-server.pylsp.config.pylsp.plugins = {
+        pylsp-mypy = {
+          enabled = true;
+          live_mode = true;
+        };
+      };
+
       language = [
         {
           name = "nix";
           auto-format = true;
           formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+        }
+        {
+          name = "python";
+          auto-format = true;
+          language-servers = [
+            {
+              name = "ruff";
+              only-features = [
+                "format"
+                "diagnostics"
+                "code-action"
+              ];
+            }
+            {
+              name = "pyright";
+              except-features = [
+                "format"
+                "diagnostics"
+              ];
+            }
+            {
+              name = "pylsp";
+              only-features = [
+                "diagnostics"
+                "code-action"
+              ];
+            }
+          ];
         }
       ];
     };
