@@ -45,14 +45,9 @@
         email = "andreas@pelme.se";
         name = "Andreas Pelme";
       };
+      diff.format = "git";
       ui.default-command = "log";
       ui.merge-editor = "vscode";
-      ui.diff.tool = [
-        "difft"
-        "--color=always"
-        "$left"
-        "$right"
-      ];
       ui.conflict-marker-style = "git";
       ui.default-description = ''
         JJ: If applied, this commit will...
