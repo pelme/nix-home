@@ -61,12 +61,6 @@
     };
   };
 
-  programs.sapling = {
-    enable = true;
-    userName = "Andreas Pelme";
-    userEmail = "andreas@pelme.se";
-  };
-
   programs.fish = {
     enable = true;
 
