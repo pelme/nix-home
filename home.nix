@@ -45,6 +45,7 @@
         email = "andreas@pelme.se";
         name = "Andreas Pelme";
       };
+      core.fsmonitor = "watchman";
       diff.format = "git";
       ui.default-command = "log";
       ui.merge-editor = "vscode";
@@ -232,6 +233,7 @@
     tree
     nil
     nixfmt-rfc-style
+    watchman
     wget
     uv
     unixtools.watch
