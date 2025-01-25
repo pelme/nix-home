@@ -128,6 +128,7 @@
         command = "pyright-langserver";
         args = [ "--stdio" ];
         config.reportMissingtypeStubs = false;
+        config.python.analysis.typeCheckingMode = "off";
       };
 
       language-server.ruff = {
