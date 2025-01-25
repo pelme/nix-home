@@ -137,10 +137,7 @@
       };
 
       language-server.pylsp.config.pylsp.plugins = {
-        pylsp-mypy = {
-          enabled = true;
-          live_mode = true;
-        };
+        pylsp-mypy.enabled = true;
       };
 
       language = [
