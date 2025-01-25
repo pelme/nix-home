@@ -203,9 +203,8 @@
     t = "cd (mktemp -p /tmp -d stuff.XXXXXXXXX)";
   };
   home.packages = with pkgs; [
-    _1password-cli
-    awscli2
     age
+    awscli2
     bashInteractive
     cachix
     comma
@@ -218,6 +217,8 @@
     httpie
     hyperfine
     jq
+    nil
+    nixfmt-rfc-style
     nodePackages.npm
     nodejs
     openssh
@@ -231,12 +232,11 @@
     tailscale
     tmux
     tree
-    nil
-    nixfmt-rfc-style
+    unixtools.watch
+    uv
     watchman
     wget
-    uv
-    unixtools.watch
+    _1password-cli
 
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
