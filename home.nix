@@ -46,6 +46,7 @@
         name = "Andreas Pelme";
       };
       core.fsmonitor = "watchman";
+      core.watchman.register_snapshot_trigger = true;
       diff.format = "git";
       ui.default-command = "log";
       ui.merge-editor = "vscode";
