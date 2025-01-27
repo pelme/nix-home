@@ -218,6 +218,7 @@
     jq
     nil
     nixfmt-rfc-style
+    ngrok
     nodePackages.npm
     nodejs
     openssh
