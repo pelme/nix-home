@@ -13,28 +13,8 @@
     enable = true;
     userName = "Andreas Pelme";
     userEmail = "andreas@pelme.se";
-    aliases = {
-      done = "!branch=$(git rev-parse --abbrev-ref HEAD); git switch main && git branch -D $branch";
-    };
-
     extraConfig = {
-      rerere.enabled = true;
-      commit.template = "${./git_commit_template.txt}";
-
-      push.autosetupremote = true;
-      push.default = "current";
-
-      pull.rebase = true;
-      rebase.updateRefs = true;
-
-      diff.noprefix = true;
       init.defaultBranch = "main";
-      branch.sort = "-committerdate";
-
-      advice.skippedCherryPicks = false;
-      advice.detachedHead = false;
-
-      diff.colorMoved = "default";
     };
   };
 
