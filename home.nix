@@ -60,6 +60,10 @@
 
         JJ: -------------------------------------------
       '';
+      template-aliases = {
+        "format_short_signature(signature)" =
+          ''if(signature.email().domain() == "personalkollen.se", signature.email().local(), signature.email())'';
+      };
     };
   };
 
