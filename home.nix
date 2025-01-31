@@ -96,6 +96,7 @@
         bufferline = "multiple";
         color-modes = true;
         file-picker.hidden = false;
+        continue-comments = false;
         cursor-shape = {
           insert = "bar";
           normal = "block";
