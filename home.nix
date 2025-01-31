@@ -38,11 +38,24 @@
 
         JJ: Provide links to any relevant tickets, articles or other resources
 
-        JJ: -------------------------------------------
       '';
       template-aliases = {
         "format_short_signature(signature)" =
           ''if(signature.email().domain() == "personalkollen.se", signature.email().local(), signature.email())'';
+      };
+      templates = {
+        draft_commit_description = ''
+          concat(
+            description,
+            "JJ: ----------------\n",
+            "JJ: ignore-rest",
+            "\n \n",
+            diff.stat(80),
+            " \n",
+            diff.git(),
+          )
+        '';
+
       };
     };
   };
