@@ -28,6 +28,7 @@
       core.fsmonitor = "watchman";
       core.watchman.register_snapshot_trigger = true;
       diff.format = "git";
+      git.subprocess = true;
       ui.default-command = "log";
       ui.merge-editor = "vscode";
       ui.conflict-marker-style = "git";
