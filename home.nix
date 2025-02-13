@@ -40,6 +40,19 @@
         JJ: Provide links to any relevant tickets, articles or other resources
 
       '';
+      revset-aliases = {
+        "closest_bookmark(to)" = "heads(::to & bookmarks())";
+      };
+      aliases = {
+        tug = [
+          "bookmark"
+          "move"
+          "--from"
+          "closest_bookmark(@-)"
+          "--to"
+          "@-"
+        ];
+      };
       template-aliases = {
         "format_short_signature(signature)" =
           ''if(signature.email().domain() == "personalkollen.se", signature.email().local(), signature.email())'';
