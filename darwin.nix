@@ -5,9 +5,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  system.checks.verifyNixChannels = false;
   system.stateVersion = 5;
-  services.nix-daemon.enable = true;
 
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
