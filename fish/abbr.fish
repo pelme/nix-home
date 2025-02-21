@@ -36,5 +36,5 @@ abbr --add k kubectl
 abbr --add kp kubectl -n production
 abbr --add kr kubectl -n review
 
-abbr --add jjw watch -n0.5 --color jj --ignore-working-copy log --color=always
+abbr --add jjw "watch -n0.5 --color jj --ignore-working-copy log --color=always\;echo\;jj --color=always status"
 abbr --add jjr 'git fetch && jj rebase -b "all:mutable() & mine()" -d main@origin --skip-emptied'
