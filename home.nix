@@ -257,6 +257,20 @@
       ln -s ${pkgs.python312}/bin/python $out/bin/python3.12
       ln -s ${pkgs.python313}/bin/python $out/bin/python3.13
     '')
+
+    (pkgs.writeShellApplication {
+      name = "jj-github-pr";
+      runtimeInputs = [
+        pkgs.git
+        pkgs.jujutsu
+        (pkgs.python3.withPackages (p: [
+          p.pygithub
+          p.click
+        ]))
+      ];
+      text = ''exec python ${./jj_github_pr.py} "$@"'';
+    })
+
   ];
 
   home.file = {
