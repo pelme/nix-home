@@ -217,6 +217,7 @@
     coreutils
     curl
     difftastic
+    exiftool
     findutils
     gh
     grc
