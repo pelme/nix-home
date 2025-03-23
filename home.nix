@@ -128,6 +128,7 @@
       keys.normal = {
         "{" = [ "goto_prev_paragraph" ];
         "}" = [ "goto_next_paragraph" ];
+        "C-r" = ":reload-all";
       };
     };
 
