@@ -237,6 +237,7 @@
     s3cmd
     shellcheck
     socat
+    snicat
     sops
     spacer
     tailscale
