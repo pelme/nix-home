@@ -254,9 +254,6 @@
       ln -s ${pkgs.python312}/bin/python $out/bin/python3
       ln -s ${pkgs.python312}/bin/python $out/bin/python
 
-      ln -s ${pkgs.python39}/bin/python $out/bin/python3.9
-      ln -s ${pkgs.python310}/bin/python $out/bin/python3.10
-      ln -s ${pkgs.python311}/bin/python $out/bin/python3.11
       ln -s ${pkgs.python312}/bin/python $out/bin/python3.12
       ln -s ${pkgs.python313}/bin/python $out/bin/python3.13
       ln -s ${pkgs.python314}/bin/python $out/bin/python3.14
