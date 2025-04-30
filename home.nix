@@ -256,7 +256,17 @@
 
       ln -s ${pkgs.python312}/bin/python $out/bin/python3.12
       ln -s ${pkgs.python313}/bin/python $out/bin/python3.13
-      ln -s ${pkgs.python314}/bin/python $out/bin/python3.14
+      ln -s ${
+        # Python 3.14 with t strings
+        (pkgs.python314.overrideAttrs {
+          src = fetchFromGitHub {
+            owner = "python";
+            repo = "cpython";
+            rev = "0e21ed7c09c687d62d6bf054022e66bccd1fa2bc";
+            hash = "sha256-YMVeAa9qdqvEYzj7mpZ7fJc3gxfD9JqdD76QNaEgTtc=";
+          };
+        })
+      }/bin/python $out/bin/python3.14
     '')
 
     (pkgs.writeShellApplication {
