@@ -225,6 +225,7 @@
     httpie
     hyperfine
     imagemagick
+    jjui
     jq
     nil
     nixfmt-rfc-style
