@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 {
@@ -285,16 +286,27 @@
 
   ];
 
-  home.file = {
-    ".hushlogin".text = "";
-    ".psqlrc".text = ''
-      \set QUIET ON
-      \pset null 'NULL'
-      \timing
-      \set COMP_KEYWORD_CASE upper
-      \set QUIET OFF
-    '';
-  };
+  home.file =
+
+    let
+      jjuiConfigDir = (
+        if pkgs.stdenv.isDarwin then "Library/Application Support" else config.xdg.configHome
+      );
+    in
+    {
+      ".hushlogin".text = "";
+      ".psqlrc".text = ''
+        \set QUIET ON
+        \pset null 'NULL'
+        \timing
+        \set COMP_KEYWORD_CASE upper
+        \set QUIET OFF
+      '';
+      "${jjuiConfigDir}/jjui/config.toml".text = ''
+        [ui]
+          auto_refresh_interval = 1
+      '';
+    };
 
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
