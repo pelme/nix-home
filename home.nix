@@ -233,6 +233,7 @@
     ngrok
     nodePackages.npm
     nodejs
+    nix-output-monitor
     openssh
     ripgrep
     rsync
