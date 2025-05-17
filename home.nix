@@ -252,6 +252,10 @@
     wget
     _1password-cli
 
+    cowsay
+    figlet
+    lolcat
+
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
       ln -s ${pkgs.python312}/bin/python $out/bin/python3
