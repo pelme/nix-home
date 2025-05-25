@@ -10,6 +10,7 @@
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
 
+  system.primaryUser = "andreas";
   # https://www.stefanjudis.com/blog/why-i-dont-need-to-clean-up-my-desktop-and-downloads-folder-in-macos/
   system.defaults = {
     screencapture.location = "/private/tmp";
@@ -51,7 +52,7 @@
     pkgs.nerd-fonts.fira-code
   ];
 
-  system.activationScripts.postUserActivation.text = ''
+  system.activationScripts.setupStuff.text = ''
     killall Dock
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
     ANDREAS_FISH="/etc/profiles/per-user/andreas/bin/fish"
