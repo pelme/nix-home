@@ -29,18 +29,9 @@
       core.fsmonitor = "watchman";
       core.watchman.register-snapshot-trigger = true;
       ui.diff.format = "git";
-      git.subprocess = true;
       ui.default-command = "log";
       ui.merge-editor = "vscode";
       ui.conflict-marker-style = "git";
-      ui.default-description = ''
-        JJ: If applied, this commit will...
-
-        JJ: Explain why this change is being made
-
-        JJ: Provide links to any relevant tickets, articles or other resources
-
-      '';
       revset-aliases = {
         "closest_bookmark(to)" = "heads(::to & bookmarks())";
       };
@@ -57,11 +48,21 @@
       template-aliases = {
         "format_short_signature(signature)" =
           ''if(signature.email().domain() == "personalkollen.se", signature.email().local(), signature.email())'';
+
+        default_commit_description = ''
+          "JJ: If applied, this commit will...
+
+          JJ: Explain why this change is being made
+
+          JJ: Provide links to any relevant tickets, articles or other resources
+
+          "
+        '';
       };
       templates = {
         draft_commit_description = ''
           concat(
-            description,
+            coalesce(description, default_commit_description, "\n"),
             "JJ: ----------------\n",
             "JJ: ignore-rest",
             "\n \n",
