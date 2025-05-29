@@ -259,6 +259,7 @@
 
     cargo
     rustc
+    rustfmt
 
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
