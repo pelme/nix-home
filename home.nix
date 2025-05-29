@@ -263,8 +263,8 @@
 
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
-      ln -s ${pkgs.python312}/bin/python $out/bin/python3
-      ln -s ${pkgs.python312}/bin/python $out/bin/python
+      ln -s ${pkgs.python314}/bin/python $out/bin/python3
+      ln -s ${pkgs.python314}/bin/python $out/bin/python
 
       ln -s ${pkgs.python312}/bin/python $out/bin/python3.12
       ln -s ${pkgs.python313}/bin/python $out/bin/python3.13
