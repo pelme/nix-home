@@ -260,6 +260,8 @@
     cargo
     rustc
     rustfmt
+    rust-analyzer
+    lldb
 
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
