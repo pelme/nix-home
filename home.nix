@@ -34,6 +34,8 @@
       ui.conflict-marker-style = "git";
       revset-aliases = {
         "closest_bookmark(to)" = "heads(::to & bookmarks())";
+        "fork(x)" = "fork_point(trunk())+::x";
+        "fork" = "fork(@)";
       };
       aliases = {
         tug = [
