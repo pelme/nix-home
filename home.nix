@@ -218,9 +218,11 @@
     awscli2
     bashInteractive
     cachix
+    colima
     comma
     coreutils
     curl
+    docker-client
     difftastic
     exiftool
     findutils
