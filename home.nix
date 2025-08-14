@@ -26,9 +26,9 @@
         email = "andreas@pelme.se";
         name = "Andreas Pelme";
       };
-      core.fsmonitor = "watchman";
-      core.watchman.register-snapshot-trigger = true;
-      ui.diff.format = "git";
+      fsmonitor.backend = "watchman";
+      fsmonitor.watchman.register-snapshot-trigger = true;
+      ui.diff-formatter = ":git";
       ui.default-command = "log";
       ui.merge-editor = "vscode";
       ui.conflict-marker-style = "git";
