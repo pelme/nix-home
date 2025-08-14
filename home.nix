@@ -236,7 +236,6 @@
     nil
     nixfmt-rfc-style
     ngrok
-    nodePackages.npm
     nodejs
     nix-output-monitor
     openssh
