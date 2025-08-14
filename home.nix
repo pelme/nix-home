@@ -224,6 +224,7 @@
     curl
     docker-client
     difftastic
+    google-cloud-sdk
     exiftool
     findutils
     gh
