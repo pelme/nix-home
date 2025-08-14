@@ -6,3 +6,4 @@ abbr --add kp kubectl -n production
 abbr --add kr kubectl -n review
 
 abbr --add jjr 'git fetch && jj rebase -b "mutable() & mine()" -d main@origin --skip-emptied'
+abbr --add jjn 'jj new main@origin'
