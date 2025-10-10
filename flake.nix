@@ -12,12 +12,11 @@
 
   outputs =
     {
-      self,
       darwin,
       nixpkgs,
       home-manager,
       ...
-    }@inputs:
+    }:
     {
       formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
       nixosConfigurations.haxmachine = nixpkgs.lib.nixosSystem {
