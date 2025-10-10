@@ -250,7 +250,6 @@
   };
   home.packages = with pkgs; [
     age
-    awscli2
     bashInteractive
     cachix
     colima
