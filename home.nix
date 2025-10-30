@@ -32,19 +32,6 @@
       ui.default-command = "log";
       ui.merge-editor = "vscode";
       ui.conflict-marker-style = "git";
-      revset-aliases = {
-        "closest_bookmark(to)" = "heads(::to & bookmarks())";
-      };
-      aliases = {
-        tug = [
-          "bookmark"
-          "move"
-          "--from"
-          "closest_bookmark(@-)"
-          "--to"
-          "@-"
-        ];
-      };
       template-aliases = {
         "format_short_signature(signature)" =
           ''if(signature.email().domain() == "personalkollen.se", signature.email().local(), signature.email())'';
