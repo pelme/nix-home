@@ -7,7 +7,11 @@
 {
   home.stateVersion = "23.11";
 
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   programs.htop.enable = true;
   programs.fzf.enable = true;
   programs.git = {
