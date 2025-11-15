@@ -365,6 +365,10 @@
       "${jjuiConfigDir}/jjui/config.toml".text = ''
         [ui]
           auto_refresh_interval = 1
+        [leader.g]
+          context = ["$change_id"]
+          help = "Upload this change to Gerrit"
+          send = ["$", "jj-gerrit-send $change_id", "enter"]
       '';
     };
 
