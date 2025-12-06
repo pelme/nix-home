@@ -1,6 +1,13 @@
 #!/bin/bash
 set -eou pipefail
-echo building darwing configuration...
-nix --extra-experimental-features 'nix-command flakes' build .#darwinConfigurations.pelme.system
+
+if command -v nom &> /dev/null; then
+    nix="nom"
+else
+    nix="nix --extra-experimental-features 'nix-command flakes'"
+fi
+
+$nix build .#darwinConfigurations.pelme.system
+
 echo switching config
 sudo --set-home ./result/sw/bin/darwin-rebuild switch --flake .#pelme
