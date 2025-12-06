@@ -16,9 +16,9 @@
   programs.fzf.enable = true;
   programs.git = {
     enable = true;
-    userName = "Andreas Pelme";
-    userEmail = "andreas@pelme.se";
-    extraConfig = {
+    settings = {
+      user.name = "Andreas Pelme";
+      user.email = "andreas@pelme.se";
       init.defaultBranch = "main";
     };
   };
