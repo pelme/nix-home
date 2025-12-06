@@ -223,12 +223,9 @@
     plugins = with pkgs.vimPlugins; [
       vim-airline
       vim-airline-themes
-      vim-commentary
-      vim-nix
       vim-one
+      vim-commentary
       vim-surround
-      vim-fish
-      ctrlp-vim
     ];
     extraConfig = builtins.readFile ./vimrc.vim;
   };
