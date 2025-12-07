@@ -302,12 +302,19 @@
       runtimeInputs = [
         pkgs.git
         pkgs.jujutsu
-        (pkgs.python3.withPackages (p: [
-          p.pygithub
-          p.click
-        ]))
       ];
-      text = ''exec python ${./jj_github_pr.py} "$@"'';
+      text =
+
+        let
+          python = (
+            pkgs.python3.withPackages (p: [
+              p.pygithub
+              p.click
+            ])
+          );
+        in
+
+        ''exec ${python}/bin/python ${./jj_github_pr.py} "$@"'';
     })
 
   ];
