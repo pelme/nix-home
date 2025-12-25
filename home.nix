@@ -30,8 +30,6 @@
         email = "andreas@pelme.se";
         name = "Andreas Pelme";
       };
-      fsmonitor.backend = "watchman";
-      fsmonitor.watchman.register-snapshot-trigger = true;
       ui.diff-formatter = ":git";
       ui.default-command = "log";
       ui.merge-editor = "vscode";
@@ -272,7 +270,6 @@
     tree
     unixtools.watch
     uv
-    watchman
     wget
     _1password-cli
 
