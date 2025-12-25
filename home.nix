@@ -238,7 +238,6 @@
     age
     bashInteractive
     cachix
-    colima
     comma
     coreutils
     curl
