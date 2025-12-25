@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+
+nixos-rebuild-ng "$@" \
+  --flake .#agent \
+  --target-host root@agent \
+  --build-host root@agent \

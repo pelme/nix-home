@@ -236,6 +236,7 @@
     age
     bashInteractive
     cachix
+    nixos-rebuild-ng
     comma
     coreutils
     curl
