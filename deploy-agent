@@ -3,7 +3,7 @@
 set -euo pipefail
 
 
-nixos-rebuild-ng "$@" \
+nixos-rebuild "$@" \
   --flake .#agent \
   --target-host root@agent \
   --build-host root@agent \
