@@ -67,6 +67,7 @@ in
   systemd.tmpfiles.rules = [
     "d /home/agent/share 0755 agent users -"
   ];
+  virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -106,6 +107,7 @@ in
     createHome = true;
     shell = pkgs.fish;
     uid = 1000;
+    extraGroups = [ "docker" ];
   };
   programs.fish.enable = true;
   programs.direnv.enable = true;
@@ -138,6 +140,7 @@ in
       acl whitelist dstdomain .nixos.org
       acl whitelist dstdomain .claude.ai
       acl whitelist dstdomain .github.com
+      acl whitelist dstdomain .docker.io
       acl whitelist dstdomain release-assets.githubusercontent.com
       acl whitelist dstdomain .cachix.org
       acl whitelist dstdomain storage.googleapis.com
