@@ -91,6 +91,9 @@
         })
       ]
     );
+    shellInit = ''
+      umask 002
+    '';
     plugins = with pkgs.fishPlugins; [
       {
         name = "done";

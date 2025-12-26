@@ -45,11 +45,17 @@
         modules = [
           ./darwin.nix
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.andreas = import ./home.nix;
-          }
+          (
+            let
+              home = import ./home.nix;
+            in
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.andreas = home;
+              home-manager.users.agent = home;
+            }
+          )
         ];
       };
     };
