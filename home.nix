@@ -90,7 +90,7 @@
       set -g fish_greeting
 
       set -U __done_min_cmd_duration 2000
-      fish_add_path $HOME/bin
+      fish_add_path $HOME/.local/bin
       fish_add_path /opt/homebrew/bin
     '';
 
