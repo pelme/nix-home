@@ -71,32 +71,57 @@
     loginShellInit = ''
       # This is needed to workaround the PATH being set in the wrong order.
       # https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1030877541
+      # I am not sure why this is still needed. The nix env is broken without it though :/
       fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
-
-      fish_add_path $HOME/bin
-
-      set -g fish_greeting
-      set __done_min_cmd_duration 2000
     '';
-    interactiveShellInit = lib.concatStringsSep "\n" (
-      map builtins.readFile [
-        ./fish/abbr.fish
-        ./fish/jujutsu.fish
-        ./fish/prompt.fish
-        (pkgs.fetchurl {
+    interactiveShellInit = (
+      builtins.readFile (
+        pkgs.fetchurl {
           # same as https://iterm2.com/shell_integration/fish but a stable URL
           url = "https://raw.githubusercontent.com/gnachman/iTerm2/6fc691289b95e874527775687eefc5dffd06c167/Resources/shell_integration/iterm2_shell_integration.fish";
           hash = "sha256-aKTt7HRMlB7htADkeMavWuPJOQq1EHf27dEIjKgQgo0=";
-        })
-      ]
+        }
+      )
     );
+
     shellInit = ''
       umask 002
+      # Disable the greeting message
+      set -g fish_greeting
+
+      set -U __done_min_cmd_duration 2000
+      fish_add_path $HOME/bin
     '';
-    plugins = with pkgs.fishPlugins; [
+
+    shellAbbrs = {
+      ax = "aws-vault exec pk --";
+      dj = "django-admin";
+      k = "kubectl";
+      kp = "kubectl -n production";
+      kr = "kubectl -n review";
+      jjr = ''jj git fetch && jj rebase -b "mutable() & mine()" -d main@origin --skip-emptied'';
+      jjn = "jj new main@origin";
+    };
+
+    functions = {
+      fish_prompt = ''
+        set -l last_status $status
+        set -l stat
+        if test $last_status -ne 0
+            set stat (set_color red)"[$last_status] "(set_color normal)
+        end
+
+        set -l username ""
+        test $USER != andreas; and set username (set_color ff6b6b)$USER" "(set_color normal)
+
+        string join ""  $stat $username (set_color green) (prompt_pwd) (set_color normal) '❯ '
+      '';
+
+    };
+    plugins = [
       {
         name = "done";
-        src = done.src;
+        src = pkgs.fishPlugins.done.src;
       }
     ];
   };
