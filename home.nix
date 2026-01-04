@@ -102,6 +102,7 @@
       kr = "kubectl -n review";
       jjr = ''jj git fetch && jj rebase -b "mutable() & mine()" -d main@origin --skip-emptied'';
       jjn = "jj new main@origin";
+      jjs = "jj workspace update-stale";
     };
 
     functions = {
