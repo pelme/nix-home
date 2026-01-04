@@ -113,7 +113,7 @@
         end
 
         set -l username ""
-        test $USER != andreas; and set username (set_color ff6b6b)$USER" "(set_color normal)
+        test $USER != andreas; and set username (set_color bryellow)$USER" "(set_color normal)
 
         string join ""  $stat $username (set_color green) (prompt_pwd) (set_color normal) '❯ '
       '';
