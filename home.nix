@@ -286,6 +286,7 @@
     nodejs
     nix-output-monitor
     openssh
+    postgresql
     ripgrep
     rsync
     s3cmd
