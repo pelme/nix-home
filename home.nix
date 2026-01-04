@@ -81,7 +81,6 @@
     interactiveShellInit = lib.concatStringsSep "\n" (
       map builtins.readFile [
         ./fish/abbr.fish
-        ./fish/homebrew.fish
         ./fish/jujutsu.fish
         ./fish/prompt.fish
         (pkgs.fetchurl {
