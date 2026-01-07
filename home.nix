@@ -369,6 +369,9 @@
           context = ["$change_id"]
           help = "Upload this change to Gerrit"
           send = ["$", "jj-gerrit-send $change_id", "enter"]
+          [leader.u]
+          help = "Fetch and rebase all changes on main."
+          send = ["$", "jj git fetch && jj rebase -b 'mutable() & mine()' -d main@origin --skip-emptied", "enter"]
       '';
     };
 
