@@ -76,6 +76,7 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       thunderbird
+      _1password-gui
     ];
   };
 
