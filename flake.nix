@@ -38,6 +38,21 @@
             }
           ];
         };
+        snowdrop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./snowdrop/configuration.nix
+            ./snowdrop/hardware-configuration.nix
+            ./modules/nix.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.andreas = import ./home.nix;
+            }
+          ];
+        };
       };
 
       darwinConfigurations.pelme = darwin.lib.darwinSystem {

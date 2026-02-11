@@ -130,7 +130,7 @@
 
   programs.ghostty = {
     enable = true;
-    package = null;
+    package = lib.mkIf pkgs.stdenv.isDarwin null;
     settings = {
       font-family = "FiraCode Nerd Font Mono";
       macos-titlebar-style = "tabs";
