@@ -18,7 +18,7 @@
       ...
     }:
     {
-      formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+      formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt;
       nixosConfigurations = {
         agent = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
