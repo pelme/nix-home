@@ -34,6 +34,7 @@
       ui.default-command = "log";
       ui.merge-editor = "vscode";
       ui.conflict-marker-style = "git";
+      merge.hunk-level = "line";
       template-aliases = {
         "format_short_signature(signature)" =
           ''if(signature.email().domain() == "personalkollen.se", signature.email().local(), signature.email())'';
