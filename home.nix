@@ -288,6 +288,7 @@
     nodejs
     nix-output-monitor
     openssh
+    podman
     postgresql
     ripgrep
     rsync
@@ -373,6 +374,10 @@
           [leader.u]
           help = "Fetch and rebase all changes on main."
           send = ["$", "jj git fetch && jj rebase -b 'mutable() & mine()' -d main@origin --skip-emptied", "enter"]
+      '';
+      ".config/containers/containers.conf".text = ''
+        [machine]
+        rosetta=false
       '';
     };
 
