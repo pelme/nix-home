@@ -46,7 +46,6 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   users.users.andreas.home = "/Users/andreas";
-  users.users.agent.home = "/Users/agent";
 
   fonts.packages = [
     pkgs.fira-code

@@ -68,7 +68,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.andreas = home;
-              home-manager.users.agent = home;
             }
           )
         ];
