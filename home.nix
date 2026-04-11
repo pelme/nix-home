@@ -5,7 +5,7 @@
   ...
 }:
 {
-  home.stateVersion = "23.11";
+  home.stateVersion = "26.05";
 
   programs.direnv = {
     enable = true;
