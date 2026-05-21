@@ -364,17 +364,7 @@
         \set COMP_KEYWORD_CASE upper
         \set QUIET OFF
       '';
-      "${jjuiConfigDir}/jjui/config.toml".text = ''
-        [ui]
-          auto_refresh_interval = 1
-        [leader.g]
-          context = ["$change_id"]
-          help = "Upload this change to Gerrit"
-          send = ["$", "jj-gerrit-send $change_id", "enter"]
-          [leader.u]
-          help = "Fetch and rebase all changes on main."
-          send = ["$", "jj git fetch && jj rebase -b 'mutable() & mine()' -d main@origin --skip-emptied", "enter"]
-      '';
+      "${jjuiConfigDir}/jjui/config.toml".source = ./jjui_config.toml;
       ".config/containers/containers.conf".text = ''
         [machine]
         rosetta=false

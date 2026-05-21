@@ -1,0 +1,15 @@
+[ui]
+auto_refresh_interval = 1
+
+[[actions]]
+name = "rebase all"
+lua = '''
+jj("git", "fetch")
+jj("rebase", "-b" , "mutable() & mine()", "-d", "main@origin", "--skip-emptied")
+revisions.refresh()
+'''
+[[bindings]]
+action = "rebase all"
+key = "R"
+scope = "revisions"
+desc = "Fetch and rebase all changes"
