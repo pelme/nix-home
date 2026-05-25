@@ -1,11 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
   ];
 
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
 
   boot.initrd.luks.devices = {
     "luks-61ce37dd-a5ed-4177-ab7c-494482e1cdc5".device = "/dev/nvme0n1p2";
@@ -17,6 +22,7 @@
       randomEncryption = true;
     }
   ];
+
   networking.hostName = "snowdrop"; # Define your hostname.
 
   networking = {
@@ -100,6 +106,7 @@
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
+    sbctl
     slack
     spotify
   ];

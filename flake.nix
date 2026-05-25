@@ -8,6 +8,10 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    lanzaboote = {
+        url = "github:nix-community/lanzaboote/v1.0.0";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
   };
 
   outputs =
@@ -15,6 +19,7 @@
       darwin,
       nixpkgs,
       home-manager,
+      lanzaboote,
       ...
     }:
     {
@@ -41,6 +46,7 @@
         snowdrop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            lanzaboote.nixosModules.lanzaboote
             ./snowdrop/configuration.nix
             ./snowdrop/hardware-configuration.nix
             ./modules/nix.nix
