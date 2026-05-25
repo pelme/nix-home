@@ -18,17 +18,11 @@
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-61ce37dd-a5ed-4177-ab7c-494482e1cdc5".device = "/dev/disk/by-uuid/61ce37dd-a5ed-4177-ab7c-494482e1cdc5";
-
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/4188-6523";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
-
-  swapDevices =
-    [ { device = "/dev/mapper/luks-e5391660-3f2e-4317-b3af-d57087a82ffa"; }
-    ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

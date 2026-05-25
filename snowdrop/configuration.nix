@@ -7,8 +7,16 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-e5391660-3f2e-4317-b3af-d57087a82ffa".device =
-    "/dev/disk/by-uuid/e5391660-3f2e-4317-b3af-d57087a82ffa";
+  boot.initrd.luks.devices = {
+    "luks-61ce37dd-a5ed-4177-ab7c-494482e1cdc5".device = "/dev/nvme0n1p2";
+  };
+
+  swapDevices = [
+    {
+      device = "/dev/nvme0n1p3";
+      randomEncryption = true;
+    }
+  ];
   networking.hostName = "snowdrop"; # Define your hostname.
 
   networking = {
