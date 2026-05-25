@@ -78,15 +78,22 @@
     packages = with pkgs; [
       thunderbird
       _1password-gui
+      zed-editor
     ];
   };
 
+
   programs.firefox.enable = true;
+  programs.steam.enable = true;
+  programs.chromium.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
+    slack
+    spotify
   ];
 
   services.openssh.enable = true;
