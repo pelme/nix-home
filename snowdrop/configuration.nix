@@ -29,6 +29,7 @@
     useNetworkd = true;
     networkmanager.enable = true;
   };
+  systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
 
   time.timeZone = "Europe/Stockholm";
 
