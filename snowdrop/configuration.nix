@@ -36,7 +36,8 @@
   services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
-    layout = "se";
+    layout = "se,us";
+    options = "grp:ctrl_space_toggle";
     variant = "";
   };
   console.keyMap = "sv-latin1";
