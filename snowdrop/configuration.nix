@@ -58,6 +58,7 @@
   console.keyMap = "sv-latin1";
 
   services.printing.enable = true;
+  services.libinput.touchpad.naturalScrolling = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
