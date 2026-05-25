@@ -90,6 +90,7 @@
   ];
 
   services.openssh.enable = true;
+  services.fprintd.enable = true;
 
   programs.fish.enable = true;
   system.stateVersion = "25.11";
