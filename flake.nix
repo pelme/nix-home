@@ -34,6 +34,7 @@
           modules = [
             ./haxmachine.nix
             ./modules/nix.nix
+            ./modules/desktop.nix
 
             home-manager.nixosModules.home-manager
             {
@@ -47,9 +48,12 @@
           system = "x86_64-linux";
           modules = [
             lanzaboote.nixosModules.lanzaboote
-            ./snowdrop/configuration.nix
-            ./snowdrop/hardware-configuration.nix
+            ./hosts/snowdrop.nix
             ./modules/nix.nix
+            ./modules/base.nix
+            ./modules/desktop-base.nix
+            ./modules/desktop-plasma.nix
+            ./modules/secure-boot.nix
 
             home-manager.nixosModules.home-manager
             {
