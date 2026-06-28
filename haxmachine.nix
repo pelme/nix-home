@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -16,9 +15,6 @@ in
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-partlabel/root";
@@ -56,26 +52,6 @@ in
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.xkb.layout = "se";
-  services.xserver.xkb.variant = "";
-
-  # Configure console keymap
-  console.keyMap = "sv-latin1";
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   users.users.tilde = {
     isNormalUser = true;
     description = "tilde";
@@ -85,8 +61,6 @@ in
     ];
     packages = with pkgs; [
       firefox
-      htop
-      vim
       vscode
       git
     ];
@@ -96,6 +70,7 @@ in
 
   environment.systemPackages = with pkgs; [
     vim
+    helix
     git
   ];
 
@@ -103,6 +78,7 @@ in
   users.defaultUserShell = pkgs.fish;
 
   services.openssh.enable = true;
+
   users.users.root.openssh.authorizedKeys.keys = constants.sshKeys;
   users.users.tilde.openssh.authorizedKeys.keys = constants.sshKeys;
 

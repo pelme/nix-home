@@ -34,6 +34,7 @@
           modules = [
             ./haxmachine.nix
             ./modules/nix.nix
+            ./modules/desktop.nix
 
             home-manager.nixosModules.home-manager
             {
