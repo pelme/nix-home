@@ -85,8 +85,6 @@ in
     ];
     packages = with pkgs; [
       firefox
-      htop
-      vim
       vscode
       git
     ];
@@ -96,6 +94,7 @@ in
 
   environment.systemPackages = with pkgs; [
     vim
+    helix
     git
   ];
 
@@ -103,6 +102,7 @@ in
   users.defaultUserShell = pkgs.fish;
 
   services.openssh.enable = true;
+
   users.users.root.openssh.authorizedKeys.keys = constants.sshKeys;
   users.users.tilde.openssh.authorizedKeys.keys = constants.sshKeys;
 
