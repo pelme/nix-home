@@ -265,14 +265,10 @@
   home.packages = with pkgs; [
     age
     bashInteractive
-    cachix
-    nixos-rebuild-ng
-    comma
     coreutils
     curl
     docker-client
     difftastic
-    google-cloud-sdk
     exiftool
     findutils
     gh
@@ -298,23 +294,12 @@
     snicat
     sops
     spacer
-    tailscale
     tmux
     tree
     unixtools.watch
     uv
     wget
     _1password-cli
-
-    cowsay
-    figlet
-    lolcat
-
-    cargo
-    rustc
-    rustfmt
-    rust-analyzer
-    lldb
 
     (pkgs.runCommand "all-the-pythons" { } ''
       mkdir -p $out/bin
