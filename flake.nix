@@ -2,14 +2,14 @@
   description = "Andreas nix-darwin/home-manager configuration.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    darwin.url = "github:lnl7/nix-darwin/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    darwin.url = "github:lnl7/nix-darwin/nix-darwin-26.05";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     lanzaboote = {
-        url = "github:nix-community/lanzaboote/v1.0.0";
+        url = "github:nix-community/lanzaboote/v1.1.0";
         inputs.nixpkgs.follows = "nixpkgs";
       };
   };
