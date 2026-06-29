@@ -32,7 +32,7 @@
         haxmachine = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./haxmachine.nix
+            ./hosts/haxmachine.nix
             ./modules/nix.nix
             ./modules/desktop.nix
 
