@@ -4,7 +4,7 @@
   ...
 }:
 let
-  constants = import ./constants.nix;
+  constants = import ../constants.nix;
 in
 {
   boot.loader.systemd-boot.enable = true;
@@ -81,6 +81,4 @@ in
 
   users.users.root.openssh.authorizedKeys.keys = constants.sshKeys;
   users.users.tilde.openssh.authorizedKeys.keys = constants.sshKeys;
-
-  system.stateVersion = "23.11";
 }
