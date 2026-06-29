@@ -333,6 +333,27 @@
 
   ];
 
+  programs.zed-editor = {
+    enable = true;
+    package = lib.mkIf pkgs.stdenv.isDarwin null;
+    mutableUserSettings = false;
+    userSettings = {
+      buffer_font_family = "Fira Code";
+      disable_ai = true;
+      colorize_brackets = true;
+      helix_mode = true;
+      base_keymap = "VSCode";
+      icon_theme = "Zed (Default)";
+      ui_font_size = 13;
+      buffer_font_size = 15;
+      theme = {
+        mode = "system";
+        light = "Ayu Light";
+        dark = "Ayu Mirage";
+      };
+    };
+  };
+
   home.file =
 
     let
