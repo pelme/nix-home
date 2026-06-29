@@ -35,7 +35,6 @@
   programs.steam.enable = true;
   programs.chromium.enable = true;
   environment.systemPackages = with pkgs; [
-    sbctl
     slack
     spotify
     thunderbird
