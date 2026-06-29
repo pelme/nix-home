@@ -1,8 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
-    ./modules/nix.nix
+
   ];
+
+  nix.optimise.automatic = true;
+  nix.settings = {
+    trusted-users = [ "andreas" ];
+    max-jobs = lib.mkDefault 60;
+    experimental-features = "nix-command flakes";
+  };
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = 5;
