@@ -1,14 +1,9 @@
 {
   pkgs,
-  config,
-  lib,
   ...
 }:
 
 {
-  imports = [
-  ];
-
   boot.initrd.luks.devices = {
     "luks-61ce37dd-a5ed-4177-ab7c-494482e1cdc5".device = "/dev/nvme0n1p2";
   };
