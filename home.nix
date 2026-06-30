@@ -352,7 +352,7 @@
       helix_mode = true;
       base_keymap = "VSCode";
       icon_theme = "Zed (Default)";
-      ui_font_size = 13;
+      ui_font_size = 14;
       buffer_font_size = 15;
       title_bar = {
         show_branch_status_icon = false; # Show git status on branch icon
