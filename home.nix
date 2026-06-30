@@ -344,6 +344,7 @@
       "helm"
       "django"
     ];
+    extraPackages = [ pkgs.nixd ];
     userSettings = {
       buffer_font_family = "Fira Code";
       disable_ai = true;
