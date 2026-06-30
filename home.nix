@@ -129,6 +129,11 @@
     ];
   };
 
+  # Workaround for https://github.com/nix-community/home-manager/pull/9272
+  # Avoids warnings when building like
+  # "trace: warning: andreas profile: programs.man.generateCaches has no effect when programs.man.package is null"
+  programs.man.generateCaches = false;
+
   programs.ghostty = {
     enable = true;
     package = lib.mkIf pkgs.stdenv.isDarwin null;
