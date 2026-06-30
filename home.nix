@@ -337,6 +337,16 @@
     enable = true;
     package = lib.mkIf pkgs.stdenv.isDarwin null;
     mutableUserSettings = false;
+    extensions = [
+      "html"
+      "toml"
+      "terraform"
+      "sql"
+      "scss"
+      "nix"
+      "helm"
+      "django"
+    ];
     userSettings = {
       buffer_font_family = "Fira Code";
       disable_ai = true;
