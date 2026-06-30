@@ -252,14 +252,6 @@
   programs.neovim = {
     enable = true;
     viAlias = true;
-    vimAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      vim-airline
-      vim-airline-themes
-      vim-one
-      vim-commentary
-      vim-surround
-    ];
     extraConfig = builtins.readFile ./vimrc.vim;
   };
 
