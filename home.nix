@@ -265,14 +265,10 @@
     coreutils
     curl
     docker-client
-    difftastic
-    exiftool
     findutils
     gh
-    grc
     httpie
     hyperfine
-    imagemagick
     jjui
     jq
     nil
@@ -283,15 +279,10 @@
     nix-output-monitor
     openssh
     podman
-    postgresql
     ripgrep
     rsync
-    s3cmd
     shellcheck
-    socat
-    snicat
     sops
-    spacer
     tmux
     tree
     unixtools.watch
