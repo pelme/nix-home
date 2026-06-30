@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eou pipefail
 
 if command -v nom &> /dev/null; then
@@ -7,7 +7,7 @@ else
     nix="nix --extra-experimental-features 'nix-command flakes'"
 fi
 
-$nix build .#darwinConfigurations.pelme.system
+"$nix" build .#darwinConfigurations.pelme.system
 
 echo switching config
 sudo --set-home ./result/sw/bin/darwin-rebuild switch --flake .#pelme
