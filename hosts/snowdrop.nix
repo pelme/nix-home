@@ -35,6 +35,7 @@
     thunderbird
     _1password-gui
     zed-editor
+    obsidian
   ];
 
   services.openssh.enable = true;
