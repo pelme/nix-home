@@ -277,6 +277,7 @@
     jq
     nil
     nixfmt
+    nixd
     ngrok
     nodejs
     nix-output-monitor
@@ -344,7 +345,6 @@
       "helm"
       "django"
     ];
-    extraPackages = [ pkgs.nixd ];
     userSettings = {
       buffer_font_family = "Fira Code";
       disable_ai = true;
