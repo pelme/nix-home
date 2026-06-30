@@ -140,7 +140,7 @@
     settings = {
       font-family = "FiraCode Nerd Font Mono";
       macos-titlebar-style = "tabs";
-      theme = "dracula";
+      theme = "dark:dracula,light:One Half Light";
     };
     themes.dracula = {
       palette = [
