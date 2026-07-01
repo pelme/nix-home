@@ -40,4 +40,9 @@
   systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
 
   programs.firefox.enable = true;
+
+  # Run LSPs provided by Zed:
+  # https://wiki.nixos.org/wiki/Zed#Nix-ld_(recommended)
+  # Also useful to run binary wheels with uv
+  programs.nix-ld.enable = true;
 }
