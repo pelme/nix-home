@@ -11,4 +11,6 @@
     yubioath-flutter
     zed-editor
   ];
+  # make yubikey's work with one time codes
+  services.pcscd.enable = true;
 }
