@@ -258,7 +258,9 @@
   home.shellAliases = {
     pbclean = "pbpaste | pbcopy";
     t = "cd (mktemp -p /tmp -d stuff.XXXXXXXXX)";
-  };
+  }
+  # Alias zed to zeditor on Linux (it is already named zed on macOS)
+  // lib.optionalAttrs (!pkgs.stdenv.isDarwin) { zed = "zeditor"; };
   home.packages = with pkgs; [
     age
     bashInteractive
