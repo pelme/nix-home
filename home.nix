@@ -338,11 +338,11 @@
       ui_font_size = 14;
       buffer_font_size = 15;
       title_bar = {
-        show_branch_status_icon = false; # Show git status on branch icon
-        show_branch_name = false; # Show/hide branch name
-        show_onboarding_banner = false; # Show/hide onboarding banners
-        show_sign_in = false; # Show/hide sign-in button
-        show_menus = false; # Show/hide menus
+        show_branch_status_icon = false;
+        show_branch_name = false;
+        show_onboarding_banner = false;
+        show_sign_in = false;
+        show_menus = false;
       };
       project_panel.dock = "left";
       theme = {
