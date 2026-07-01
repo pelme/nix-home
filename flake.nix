@@ -53,9 +53,11 @@
             ./hosts/snowdrop.nix
             ./modules/nix.nix
             ./modules/base.nix
+            ./modules/desktop-packages.nix
             ./modules/desktop-base.nix
             ./modules/desktop-plasma.nix
             ./modules/secure-boot.nix
+            ./modules/andreas-user.nix
 
             home-manager.nixosModules.home-manager
             {

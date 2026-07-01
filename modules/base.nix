@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   boot.loader.efi.canTouchEfiVariables = true;
   hardware.enableRedistributableFirmware = true;
@@ -7,6 +7,8 @@
   programs.fish.enable = true;
 
   time.timeZone = "Europe/Stockholm";
+
+  users.defaultUserShell = pkgs.fish;
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {

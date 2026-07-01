@@ -19,6 +19,7 @@
     pulse.enable = true;
   };
 
+  services.fprintd.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
