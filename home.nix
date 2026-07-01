@@ -342,6 +342,7 @@
         show_sign_in = false; # Show/hide sign-in button
         show_menus = false; # Show/hide menus
       };
+      project_panel.dock = "left";
       theme = {
         mode = "system";
         light = "Ayu Light";

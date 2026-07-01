@@ -38,7 +38,6 @@
     obsidian
   ];
 
-  services.openssh.enable = true;
   services.fprintd.enable = true;
 
   boot.initrd.availableKernelModules = [ "nvme" ];
