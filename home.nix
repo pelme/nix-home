@@ -174,22 +174,13 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "fleet_dark";
       editor = {
-        bufferline = "multiple";
-        color-modes = true;
-        file-picker.hidden = false;
+        # avoid continue comments in JJ commit messages
         continue-comments = false;
-        cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
       };
       keys.normal = {
         "{" = [ "goto_prev_paragraph" ];
         "}" = [ "goto_next_paragraph" ];
-        "C-r" = ":reload-all";
       };
     };
 
