@@ -6,7 +6,5 @@
     pkiBundle = "/var/lib/sbctl";
   };
 
-  environment.systemPackages = with pkgs; [
-    sbctl
-  ];
+  environment.systemPackages = [ pkgs.sbctl ];
 }
